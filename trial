@@ -1,77 +1,35 @@
-define(['pipAPI', 'https://raw.githubusercontent.com/PoPLab-McGill/nari.qualtircs.api/refs/heads/main/api'], function(APIConstructor, stiatExtension){
-
-    var API = new APIConstructor();
-	var global = API.getGlobal();
-
-	return stiatExtension(
-		{			
-			/*remindErrorText : '<p align="center" style="font-size:"4em"; font-family:arial">' +
-			'If you make a mistake, a red <font color="#ff0000"><b>X</b></font> will appear. ' +
-			'Press the other key to continue.<p/>',**/
-			
-			//Define the category.
-			category :  
-			{
-				name : 'Autistics', //Category label.
-				title : {
-					media : {word : 'Autistics'}, //Name of the category presented in the task.
-					css : {color:'#31b404','font-size':'2em'}, //Style of the category title.
-					height : 7 //Used to position the "Or" in the combined block.
-				}, 
-				media : [ //Stimuli
-    		    {Word : 'black1'}, 
-    			{Word : 'black2'}, 
-    			{Word : 'black3'}, 
-    			{Word : 'black4'}, 
-    			{Word : 'black5'}, 
-    			{Word : 'black6'}
-				],
-				//Can change color and size of the targets here.
-				css : {color:'#31b404','font-size':'3em'}
-			},
-			attribute1 : 
-			{
-				name : 'Unpleasant', //Attribute label
-				title : {
-					media : {word : 'Negative'}, //Name of the category presented in the task.
-					css : {color:'#31b404','font-size':'2em'}, //Style of the category title.
-					height : 7 //Used to position the "Or" in the combined block.
-				}, 
-				media : [ //Stimuli
-					{word: 'Bomb'},
-					{word: 'Abuse'},
-					{word: 'Sadness'},
-					{word: 'Pain'},
-					{word: 'Poison'},
-					{word: 'Grief'}
-				], 
-				//Can change color and size of the targets here.
-				css : {color:'#31b404','font-size':'3em'}
-			},
-			attribute2 : 
-			{
-				name : 'Pleasant', //Attribute label
-				title : {
-					media : {word : 'Positive'}, //Name of the category presented in the task.
-					css : {color:'#31b404','font-size':'2em'}, //Style of the category title.
-					height : 7 //Used to position the "Or" in the combined block.
-				}, 
-				media : [ //Stimuli
-					{word: 'Paradise'},
-					{word: 'Pleasure'},
-					{word: 'Cheer'},
-					{word: 'Wonderful'},
-					{word: 'Splendid'},
-					{word: 'Love'}
-				], 
-				//Can change color and size of the targets here.
-				css : {color:'#31b404','font-size':'3em'}
-			}, 
-			
-			base_url : {
-			    image : global.mediaURL
-		    }
-
-		}
-	);
+define(['https://cdn.jsdelivr.net/gh/baranan/minno-tasks@0.*/IAT/iat10.js'], function(iatExtension){
+    return iatExtension({
+        category1 : {
+            name : 'Black People', //Will appear in the data.
+            title : {
+                media : {word : 'Black People'}, //Name of the category presented in the task.
+                css : {color:'#31b404','font-size':'2em'}, //Style of the category title.
+                height : 4 //Used to position the "Or" in the combined block.
+            }, 
+            stimulusMedia : [ //Stimuli content as PIP's media objects
+                {image: 'bf14_nc.jpg'},
+                {image: 'bf23_nc.jpg'},
+                {image: 'bm23_nc.jpg'},
+                {image: 'bm56_nc.jpg'}
+            ]
+        },    
+        category2 :    {
+            name : 'White People', //Will appear in the data.
+            title : {
+                media : {word : 'White People'}, //Name of the category presented in the task.
+                css : {color:'#31b404','font-size':'2em'}, //Style of the category title.
+                height : 4 //Used to position the "Or" in the combined block.
+            }, 
+            stimulusMedia : [ //Stimuli content as PIP's media objects
+                {image: 'wf2_nc.jpg'},
+                {image: 'wf3_nc.jpg'},
+                {image: 'wm4_nc.jpg'},
+                {image: 'wm6_nc.jpg'}
+            ]
+        },
+        base_url : {//Where are your images at?
+            image : '/implicit/user/yba/pimraceiat/images/'
+        } 
+    });
 });

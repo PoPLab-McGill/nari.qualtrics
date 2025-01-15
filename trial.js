@@ -1,4 +1,5 @@
-define(['pipAPI', 'https://cdn.jsdelivr.net/gh/baranan/minno-tasks@0.*/stiat/stiat6.js'], function(APIConstructor, stiatExtension){
+define(['pipAPI', 'https://cdn.jsdelivr.net/gh/PoPLab-McGill/nari.qualtrics.extension@main/nari.extension.js
+'], function(APIConstructor, stiatExtension){
 
     var API = new APIConstructor();
 	var global = API.getGlobal();

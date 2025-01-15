@@ -1,67 +1,77 @@
-define(['pipAPI', 'https://cdn.jsdelivr.net/gh/baranan/minno-tasks@0.*/stiat/qualtrics/qstiat6.js'], function(APIConstructor, stiatExtension){
-	
-	var API = new APIConstructor();
-		  return stiatExtension({
-		  category : { 
-		    name : 'Black people', //Will appear in the data.
-		    title : {
-		      media : {word : 'Autistics'}, //Name of the category presented in the task.
-		      css : {color:'#31b404','font-size':'2em'}, //Style of the category title.
-		      height : 7 //Used to position the "Or" in the combined block.
-		    }, 
-		    media : [ //Stimuli content as PIP's media objects
-    		    	{word : 'black1.jpg'}, 
-    			{word : 'black2.jpg'}, 
-    			{word : 'black3.jpg'}, 
-    			{word : 'black4.jpg'}, 
-    			{word : 'black5.jpg'}, 
-    			{word : 'black6.jpg'}
-		    ], 
-		    //Stimulus css (style)
-		    css : {color:'#31b404','font-size':'3em'}
-		  },	
+define(['pipAPI', 'https://cdn.jsdelivr.net/gh/baranan/minno-tasks@0.*/stiat/stiat6.js'], function(APIConstructor, stiatExtension){
 
-  		attribute1 : 
-			{
-			name : 'Unpleasant', //Attribute label
-			title : {
-				media : {word : 'Negative'}, //Name of the category presented in the task.
-				css : {color:'#31b404','font-size':'2em'}, //Style of the category title.
-				height : 7 //Used to position the "Or" in the combined block.
-			}, 
-			media : [ //Stimuli
-				{word: 'Bomb'},
-				{word: 'Abuse'},
-				{word: 'Sadness'},
-				{word: 'Pain'},
-				{word: 'Poison'},
-				{word: 'Grief'}
-			], 
-			//Can change color and size of the targets here.
-			css : {color:'#31b404','font-size':'3em'}
-			},
-		attribute2 : 
-			{
-			name : 'Pleasant', //Attribute label
-			title : {
-				media : {word : 'Positive'}, //Name of the category presented in the task.
-				css : {color:'#31b404','font-size':'2em'}, //Style of the category title.
-				height : 7 //Used to position the "Or" in the combined block.
-			}, 
-			media : [ //Stimuli
-				{word: 'Paradise'},
-				{word: 'Pleasure'},
-				{word: 'Cheer'},
-				{word: 'Wonderful'},
-				{word: 'Splendid'},
-				{word: 'Love'}
-			], 
-			//Can change color and size of the targets here.
-			css : {color:'#31b404','font-size':'3em'}
-			},
+    var API = new APIConstructor();
+	var global = API.getGlobal();
 
-  base_url : {//Where are your images at?
-    image : 'https://baranan.github.io/minno-tasks/images/'
-  }}
-  );
-  });
+	return stiatExtension(
+		{			
+			/*remindErrorText : '<p align="center" style="font-size:"4em"; font-family:arial">' +
+			'If you make a mistake, a red <font color="#ff0000"><b>X</b></font> will appear. ' +
+			'Press the other key to continue.<p/>',**/
+			
+			//Define the category.
+			category :  
+			{
+				name : 'Black people', //Category label.
+				title : {
+					media : {word : 'Black people'}, //Name of the category presented in the task.
+					css : {color:'#31b404','font-size':'2em'}, //Style of the category title.
+					height : 7 //Used to position the "Or" in the combined block.
+				}, 
+				media : [ //Stimuli
+    		    {image : 'black1.jpg'}, 
+    			{image : 'black2.jpg'}, 
+    			{image : 'black3.jpg'}, 
+    			{image : 'black4.jpg'}, 
+    			{image : 'black5.jpg'}, 
+    			{image : 'black6.jpg'}
+				],
+				//Can change color and size of the targets here.
+				css : {color:'#31b404','font-size':'3em'}
+			},
+			attribute1 : 
+			{
+				name : 'Unpleasant', //Attribute label
+				title : {
+					media : {word : 'Negative'}, //Name of the category presented in the task.
+					css : {color:'#31b404','font-size':'2em'}, //Style of the category title.
+					height : 7 //Used to position the "Or" in the combined block.
+				}, 
+				media : [ //Stimuli
+					{word: 'Bomb'},
+					{word: 'Abuse'},
+					{word: 'Sadness'},
+					{word: 'Pain'},
+					{word: 'Poison'},
+					{word: 'Grief'}
+				], 
+				//Can change color and size of the targets here.
+				css : {color:'#31b404','font-size':'3em'}
+			},
+			attribute2 : 
+			{
+				name : 'Pleasant', //Attribute label
+				title : {
+					media : {word : 'Positive'}, //Name of the category presented in the task.
+					css : {color:'#31b404','font-size':'2em'}, //Style of the category title.
+					height : 7 //Used to position the "Or" in the combined block.
+				}, 
+				media : [ //Stimuli
+					{word: 'Paradise'},
+					{word: 'Pleasure'},
+					{word: 'Cheer'},
+					{word: 'Wonderful'},
+					{word: 'Splendid'},
+					{word: 'Love'}
+				], 
+				//Can change color and size of the targets here.
+				css : {color:'#31b404','font-size':'3em'}
+			}, 
+			
+			base_url : {
+			    image : global.mediaURL
+		    }
+
+		}
+	);
+});

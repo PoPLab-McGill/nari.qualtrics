@@ -13,15 +13,15 @@ define(['pipAPI', 'https://cdn.jsdelivr.net/gh/PoPLab-McGill/nari.qualtrics.exte
 			//Define the category.
 			category :  
 			{
-				name : 'Black people', //Category label.
+				name : 'Autistics', //Category label.
 				title : {
-					media : {word : 'Black people'}, //Name of the category presented in the task.
+					media : {word : 'Autistics'}, //Name of the category presented in the task.
 					css : {color:'#31b404','font-size':'2em'}, //Style of the category title.
 					height : 7 //Used to position the "Or" in the combined block.
 				}, 
 				media : [ //Stimuli
     		    {image : 'black1.jpg'}, 
-    			{image : 'black2.jpg'}, 
+    			{word : 'black2.jpg'}, 
     			{image : 'black3.jpg'}, 
     			{image : 'black4.jpg'}, 
     			{image : 'black5.jpg'}, 
